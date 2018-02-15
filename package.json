@@ -1,0 +1,25 @@
+{
+  "name": "bitcoin_bot_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "run": "npm install && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.socrate.vsct.fr:timothee_roldao/bitcoin_bot_server.git"
+  },
+  "keywords": [
+    "bitcoin",
+    "bot",
+    "node"
+  ],
+  "author": "",
+  "license": "ISC"
+}
