@@ -6,8 +6,7 @@
   "dependencies": {
     "express": "^4.16.2"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "run": "npm install && node server.js"
   },

@@ -3,7 +3,7 @@ const app = express();
 
 //Controllers
 MainController = require('./api/Controllers/mainController');
-
+var port = process.env.PORT || 8080;
 
 module.exports = {
     express: express,
@@ -13,11 +13,11 @@ module.exports = {
 };
 
 Router = require('./api/Services/router.js');
-router = new Router(app);
+router = new Router(app); 
 router.watch();
 
-app.listen(8080, function () {
-    console.log('Example app listening on port 8080!');
+app.listen(port, function () {
+    console.log('Example app listening on port '+port+'!');
 });
 
 
