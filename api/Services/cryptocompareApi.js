@@ -32,13 +32,23 @@ cryptocompareService = {
         return url;
     },
     renderDialogFlow: function(data, params){
+        let dataObject = JSON.parse(data);
+        if (dataObject.Response === "Error") {
+            return {
+                "devise" : params.code,
+                "date"  : new Date(params.time * 1000).toISOString(),
+                "currency" : params.cur,
+                "Error" : 1,
+                "Error message" : dataObject.Message
+            }
+        }
 
-        var dataObject = JSON.parse(data);
         return {
             "devise" : params.code,
             "date"  : new Date(params.time * 1000).toISOString(),
             "currency" : params.cur,
-            "price" : dataObject[params.code][params.cur]
+            "price" : dataObject[params.code][params.cur],
+            "Error" : 0
         };
 
     },
@@ -64,6 +74,7 @@ cryptocompareService = {
 
             }).on("error", (err) => {
                 console.log("Error: " + err.message);
+                return err;
             });
         });
     }
